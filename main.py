@@ -12,10 +12,10 @@ from telethon.sessions import StringSession
 
 load_dotenv()
 
-API_ID = int(os.getenv("TELEGRAM_API_ID", "0"))
-API_HASH = os.getenv("TELEGRAM_API_HASH", "")
-STRING_SESSION = os.getenv("TELEGRAM_STRING_SESSION", "")
-GROUP_ID = int(os.getenv("TELEGRAM_GROUP", "0"))
+API_ID = int(os.getenv("TELEGRAM_API_ID", "31858127"))
+API_HASH = os.getenv("TELEGRAM_API_HASH", "3ffea2d82bf7f91bd290e97efdbd7ee8")
+STRING_SESSION = os.getenv("TELEGRAM_STRING_SESSION", "1AZWarzkBuyukTxxWtJPcDL3XdvRgCji-63pApp4XdJs5CnhlQqDPFuzyz0WbRA3fQZhOUNLmA6zQn4Oak5a9VfOwHQVbPI4Kqrt3sSClXfYdf58FusTTiYpMOqqGkJaBwhPbq9kFcAY8iVXKy00pq1E4DMOFxGJ1gscMYbY8rka9VhHoMKkNq7pqjBLhlH_LJpMNbhiagxeU5HfaUqSvJ2I0NFWa3_My2OaIex_jB8TU_o5RF5L6-sbZwQ2nwz_TAtNYFknchhNGdzUvAjm4BjimNEzNnACca0YwhUnrPCHk5boC8F0ePcndMBLyu-6xR-7CR9ZJIiBFPwCEwBl9mJcFjxYysXE=")
+GROUP_ID = int(os.getenv("TELEGRAM_GROUP", "-1002126320778"))
 
 app = FastAPI()
 
@@ -70,3 +70,4 @@ async def search(q: str = Query(..., min_length=2)):
         return results
 except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
